@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# source "/Users/tejas/.dotFiles/zsh/myzsh"
+
+# Plugings
+# zsh-autosuggestions
+# zsh-syntax-highlighting
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -rfi'
+
+alias e="exit"
+alias c="clear"
+
+alias lg="lazygit"
+alias nv="nvim"
+
+# ranger cd to directory after exit
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# vpn
+alias vv='sudo openvpn ~/.dotFiles/vpn/us-free-01.protonvpn.com.udp.ovpn'
+
+# subtitles
+alias sub='subliminal download -l en'
+
+# Torrenting
+alias tf='we-get -n 5 -t the_pirate_bay -J -s'
+alias t='transmission-daemon;~/.scripts/github/tremc/tremc'
+alias tr='~/.scripts/github/tremc/tremc'
+
+# fasd
+eval "$(fasd --init auto)"
+alias v='f -e nvim'   # quick opening files with vim
+alias lv='f -e lvim'   # quick opening files with lunarvim
+alias m='f -e mpv'   # quick opening files with mpv 
+alias o='f -e open'   # quick opening files with default program 
+
+alias pip='pip3'
+alias python='python3'
+
+# length of video files in the directory
+function vl () {
+	find . -maxdepth 1 -iname "$1" -exec ffprobe -v quiet -of csv=p=0 -show_entries format=duration {} \; | paste -sd+ -| bc | read secs ; printf '%dd:%dh:%dm:%ds\n' "$((secs/86400))" "$((secs%86400/3600))" "$((secs%3600/60))"  "$((secs%60))"
+}
+
+# HomeBrew 
+alias bi='HOMEBREW_NO_AUTO_UPDATE=1 brew install'  # install without auto updating 
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/tejas/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"

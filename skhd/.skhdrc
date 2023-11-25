@@ -1,0 +1,51 @@
+fn - x : open -a /Applications/iTerm.app/Contents/MacOS/iTerm2
+fn - a : open -a /System/Applications/Notes.app/Contents/MacOS/Notes
+fn - e : open -a /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+fn - t : open -a /System/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal
+fn - c : open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+# fn - x : open -a /Applications/Arc.app/Contents/MacOS/Arc
+fn - z : open -a /Applications/WhatsApp.app/Contents/MacOS/WhatsApp 
+fn - d : open -a /Applications/Simplenote.app/Contents/MacOS/Simplenote
+fn + shift - v : open -a /Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/MacOS/Electron
+fn + shift - b : open -a /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+fn - r : pmset displaysleepnow
+
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+## focus display
+ctrl + cmd - 1 : yabai -m window --display 1 yabai -m display --focus 1
+ctrl + cmd - 2 : yabai -m window --display 2 yabai -m display --focus 2
+ctrl + cmd - 3 : yabai -m window --display 3 yabai -m display --focus 3
+
+# swap managed window
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# rotate tree
+alt - r : chunkc tiling::desktop --rotate 90
+
+# toggle window fullscreen zoom
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# toggle padding and gap
+shift + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+# float / unfloat window and center on screen
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
+
+# toggle window split type
+alt - e : yabai -m window --toggle split
+
+# balance size of windows
+shift + alt - 0 : yabai -m space --balance
+
+# restart yabai
+alt + shift - r : brew services restart yabai
+
